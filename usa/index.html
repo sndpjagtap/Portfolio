@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualization:Demographics of USA </title>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/1.1.0/d3-legend.js"></script>
+    <script src="https://d3js.org/d3-queue.v3.min.js"></script>
+    <script src="https://d3js.org/d3-format.v1.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+            integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <script src="scripts/main.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="wrapper">
+        <div class="row" style="    border-bottom: 1px solid #999; margin-bottom: 20px">
+            <h1 class="pull-left">Demographics of USA (Year 2015)</h1>
+            <nav class="navbar pull-right" style="margin-bottom: 0">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="documentation.html">Documentation</a></li>
+                    <li><a href="https://youtu.be/bIkI-7Veoic" target="_blank">Video</a></li>
+                    <li><a class="blacklink"  href="https://github.com/sj6257/Choropleth-DataViz-D3" target="_blank">Source Code</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content">
+
+
+            <div class="row options1">
+                <div class="col-sm-3">
+                    <label for="selectionWidget1">Select data variable</label>
+                    <select id="selectionWidget1" class="form-control"></select>
+                </div>
+                <div class="col-sm-9">
+                    <label for="selectionWidget2">Filters</label>
+                    <select id="selectionWidget2" class="form-control"></select>
+                    <select id="selectionWidget3" class="form-control"></select>
+                    <select id="selectionWidget4" class="form-control"></select>
+
+                    <form class="distribution-radio pull-right options1">
+                        <label class="radio-inline">
+                            <input type="radio" name="distribution" value="State" checked>State
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="distribution" value="County">County
+                        </label>
+
+                    </form>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="wrapper">
+
+        <div id="page1" class="visualization">
+            <svg id="main" style="display: block;"></svg>
+        </div>
+
+
+        <div id="page2" class="vis-details" style="display:none">
+            <div class="row options2">
+                <div class="col-sm-6" style="padding:25px 0 20px 15px">
+                    <a id="back" href="index.html"><label id="regionLabel"> </label> </a>
+
+
+                    <!-- <form>
+                         <label class="radio-inline">
+                             <input type="radio" id="state" name="distribution2" value="State" checked>State
+                         </label>
+                         <label class="radio-inline">
+                             <input type="radio" id="county" name="distribution2" value="County">County
+                         </label>
+                    </form> -->
+                </div>
+                <!-- <div class="col-sm-3 optState">
+                     <label >Select State</label>
+                     <select id="selectionWidget6" class="form-control"></select>
+                </div>
+                <div class="col-sm-3 optCounty">
+                    <label >Select County</label>
+                     <select id="selectionWidget7" class="form-control"></select>
+                </div> -->
+
+            </div>
+
+            <svg id="det1">
+                <text id="title1" x="12" y="20" font-size="15px" fill="#337ab7">Population Within The Locality</text>
+            </svg>
+            <svg id="det2">
+                <text id="title" x="12" y="20" font-size="15px" fill="#337ab7">Population Distribution by Sex</text>
+            </svg>
+            <svg id="det3">
+                <text id="title" x="12" y="20" font-size="15px" fill="#337ab7">Age Distribution Broken Down By Sex
+                </text>
+            </svg>
+            <svg id="det4">
+                <text id="title" x="12" y="20" font-size="15px" fill="#337ab7">Median Age By Sex</text>
+            </svg>
+            <svg id="det5">
+                <text id="title" x="12" y="20" font-size="15px" fill="#337ab7">Race</text>
+            </svg>
+            <svg id="det6">
+                <text id="title" x="12" y="20" font-size="15px" fill="#337ab7">Living Arrangement for Adults</text>
+            </svg>
+            <svg id="det7" width="300" height="300">
+                <text id="title" x="12" y="20" font-size="15px" fill="#337ab7">Median Household Income</text>
+                <text id="text1" x="60" y="160" font-size="50px" fill="#41b6c4"></text>
+            </svg>
+            <svg id="det8" width="300" height="300">
+                <text id="title" x="12" y="20" font-size="15px" fill="#337ab7">Per-Capita Income</text>
+                <text id="text2" x="60" y="160" font-size="50px" fill="#41b6c4"></text>
+            </svg>
+            <svg id="det9">
+                <text id="title" x="12" y="20" font-size="15px" fill="#337ab7">Place of Birth by Nativity</text>
+
+            </svg>
+
+            <svg id="det10">
+                <text id="title" x="12" y="20" font-size="15px" fill="#337ab7">Income to Poverty-level Ratio</text>
+
+            </svg>
+            <svg id="det11">
+                <text id="title" x="12" y="20" font-size="15px" fill="#337ab7">Poverty Level by Place of Birth</text>
+            </svg>
+            <svg id="det12">
+                <text id="title" x="12" y="20" font-size="15px" fill="#337ab7">Travel Time to Work</text>
+            </svg>
+            <svg id="det13">
+                <text id="title" x="12" y="20" font-size="15px" fill="#337ab7">Educational Attainment by Place of
+                    Birth
+                </text>
+            </svg>
+            <svg id="det14">
+                <text id="title" x="12" y="20" font-size="15px" fill="#337ab7">Means of Transportation to Work</text>
+            </svg>
+        </div>
+
+
+        <div class="desc">
+            <p>The data visualization is based on 2015 American Community Survey (ACS). ACS dataset is annually compiled
+                by the US Census, and designed to provide broad demographic and socio-economic characteristics of the US
+                population.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

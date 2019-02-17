@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> Visualization </title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
+          rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.min.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+            integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3-legend/1.1.0/d3-legend.js"></script>
+    <script src="script/main.js"></script>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <style>
+
+
+    </style>
+</head>
+<body>
+
+
+<div class="wrapper">
+
+    <ul>
+        <li class="header" style="float:left">DataViz: Energy Consumption and Production</li>
+
+        <li><a href="https://github.com/sj6257/ResourceUtilization-DataViz-D3" target="_blank">Source Code</a></li>
+        <li><a href="https://www.youtube.com/watch?v=Irh1X_jD5vA" target="_blank" >Video</a></li>
+        <li><a href="report.html">Documentation</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
+    </ul>
+
+    </br>
+    <h1>Energy Consumption and Production Analysis Comparision</h1>
+    </br>
+    <text id='label'>Co2Emission</text>
+    </br></br>
+
+    <div class="left">
+        <br/>
+        <br/>
+
+        <div class="selector" style="margin-left:15px">
+            <label>Data</label> <br/>
+            <select id="selectionWidgetDataLeft">
+            </select>
+        </div>
+
+        <div id="dynamicOptions" class="selector">
+            <label>Show Data</label><br/><label><input id="all" type="radio" name="dataBreakup" value="1"
+                                                       checked>All</label><label><input type="radio" name="dataBreakup"
+                                                                                        value="2">Consumption</label><label><input
+                type="radio" name="dataBreakup" value="3">Production</label>
+        </div>
+
+        <div class="selector firstCountry">
+            <label>Country 1</label><br/>
+            <select id="selectionWidgetCountryLeft1">
+            </select>
+        </div>
+
+        <div class="selector secondCountry">
+            <label>Country 2</label><br/>
+            <select id="selectionWidgetCountryLeft2">
+                <option value="default" selected id="defaultChoice">select to compare</option>
+            </select>
+        </div>
+
+        <div class="selector">
+            <label>Chart Type</label><br/>
+            <label><input type="radio" name="mode" value="Bar" checked>Bar</label>
+            <label><input type="radio" name="mode" value="Line"> Line</label>
+        </div>
+
+
+        <div style="clear:both;"></div>
+        <br/>
+        <svg id="main"></svg>
+    </div>
+
+    <br>
+    <br>
+
+
+    <text id='label2'>Co2Emission</text>
+    </br></br>
+    <div class="bottom">
+
+        <br/> <br/>
+        <div class="selector" style="margin-left:15px">
+            <label>X Axis Data</label> <br/>
+            <select id="xAxis">
+            </select>
+        </div>
+
+        <div class="selector" style="margin-left:15px">
+            <label>Y Axis Data</label> <br/>
+            <select id="yAxis">
+            </select>
+        </div>
+
+        <div class="selector" style="margin-left:15px">
+            <label>Radial Axis Data</label> <br/>
+            <select id="zAxis">
+            </select>
+        </div>
+
+        <div class="selector" style="margin-left:15px">
+            <label>Time(Years)</label> <br/>
+            <select id="timeScale">
+            </select>
+        </div>
+
+
+        <svg id="main2"></svg>
+    </div>
+
+</div>
+
+</body>
+</html>
