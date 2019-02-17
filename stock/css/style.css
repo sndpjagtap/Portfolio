@@ -1,0 +1,220 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+
+}
+
+.row{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.controls {
+    font-weight: 500;
+    font-size: 12px;
+}
+
+#selectionWidget {
+    font-size: 12px;
+    height: 28px;
+}
+
+.background {
+    fill: #eee;
+}
+
+
+
+
+
+
+#viz {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+line {
+    stroke: #fff;
+}
+
+text.active {
+    fill: red;
+}
+
+.tiles {
+    stroke: #FFF;
+    stroke-width: 0.5px;
+}
+
+.tilesactive {
+    stroke:red;
+    stroke-width: 1px;
+    /*color: #4d9221;
+    color: #fcfcfa;
+    color:#c51b7d;*/
+
+}
+
+
+
+.tiles :hover {
+    stroke:black;
+    stroke-width: 2px;
+}
+
+
+.tooltip{
+    line-height: 1;
+    font-weight: 500;
+    padding: 6px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+}
+
+text.active {
+  fill: red;
+  font-weight: 500;
+}
+
+.yAxis path {
+    fill: none;
+    stroke: none;
+    shape-rendering: crispEdges;
+}
+
+.xAxis path {
+    fill: none;
+    stroke: none;
+    shape-rendering: crispEdges;
+}
+
+
+.dot {
+    stroke: #1f77b4;
+    stroke-width: 1.5px;
+    fill:none
+}
+
+.label {
+    font-size: 10px;
+}
+
+
+text {
+    font-size: 15px;
+    font-weight:400;
+    color: #4a4a4a;
+}
+
+.axis path, .axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+.tick text {
+    font-size: 10px;
+}
+
+.lm-line {
+    stroke: #2980b9;
+    stroke-width: 2px;
+    stroke-dasharray: 10 10;
+}
+
+.line{
+    fill:none;
+    stroke: #1f77b4;
+    stroke-width: 1.5px;
+}
+
+.axis path, .axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.circle1 {
+    fill: #30394F;
+    stroke: #30394F;
+
+
+}
+.circle2 {
+    fill: #6ACEEB;
+    stroke:#6ACEEB;
+
+}
+.intersect {
+    stroke: #0E6569;
+    stroke-width: 2px;
+    fill: #0E6569;
+
+}
+.graphtitle{
+    fill: #2980b9;
+    font-size: 14px;
+}
+
+.venntitle{
+
+    color: #2980b9;
+    font-size: 14px;
+    text-align: center;
+    margin-left: 180px;
+}
+
+
+#toggle
+{
+    margin-top: 20px;
+}
+
+#toggle span
+{
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+
+.col-margin{
+    margin-top: 15px;
+}
+
+#about{
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 80px;
+}
+
+
+#lblselectionWidget {
+
+    padding-bottom: 3px;
+}
+
+#Radios {
+    padding-bottom: 4px;
+}
+
+
+@media (max-width: 480px) {
+    .navbar-brand
+    {
+    font-size: 15px;
+}
+    .nav{
+        float: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .nav{
+        float: none !important;
+    }
+}
+
+@media (min-width: 980px) {
+
+}
